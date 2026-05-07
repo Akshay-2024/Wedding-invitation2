@@ -11,6 +11,7 @@
 html{scroll-behavior:smooth;background:#0A0A0A}
 body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--ivory);overflow-x:hidden;cursor:none}
 
+
 #cursor{position:fixed;width:12px;height:12px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s;mix-blend-mode:difference}
 #cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1px solid rgba(214,180,124,0.5);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform 0.4s cubic-bezier(.2,.8,.2,1),width 0.3s,height 0.3s}
 
@@ -25,7 +26,13 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;transition:background 0.4s,padding 0.4s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(10,10,10,0.8);-webkit-backdrop-filter: blur(20px); backdrop-filter:blur(20px);padding:16px 48px;border-bottom-color:rgba(214,180,124,0.1)}
+nav.scrolled{
+  background:rgba(10,10,10,0.82);
+    -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(20px);
+  padding:calc(env(safe-area-inset-top) + 14px) 24px 14px;
+  border-bottom-color:rgba(214,180,124,0.08);
+}
 .nav-logo{
   font-family:'Great Vibes',cursive;
   font-size:1.6rem;
@@ -166,6 +173,7 @@ nav.scrolled{background:rgba(10,10,10,0.8);-webkit-backdrop-filter: blur(20px); 
   padding:18px 16px;
   border:1px solid rgba(214,180,124,0.18);
   background:rgba(255,255,255,0.03);
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter:blur(12px);
   text-align:center;
   position:relative;
@@ -214,7 +222,18 @@ nav.scrolled{background:rgba(10,10,10,0.8);-webkit-backdrop-filter: blur(20px); 
     font-size:1.8rem;
   }
 }
-.scroll-indicator{position:absolute;bottom:0px;centre;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeUp 1s 3.5s forwards}
+.scroll-indicator{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  opacity:0;
+  animation:fadeUp 1s 3.5s forwards;
+}
 .scroll-text{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(248,245,240,0.35)}
 .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2s infinite}
 @keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
@@ -271,10 +290,12 @@ section{padding:120px 48px;position:relative}
 
 @media(max-width:768px){
   nav{padding:20px 24px}
-  nav.scrolled{padding:14px 24px}
+  nav.scrolled{
+  padding:calc(env(safe-area-inset-top) + 14px) 24px 14px;
+}
   .nav-links{
   position:fixed;
-  bottom:20px;
+  bottom:calc(env(safe-area-inset-bottom) + 14px);
   left:50%;
   transform:translateX(-50%);
   display:flex;
@@ -286,6 +307,7 @@ section{padding:120px 48px;position:relative}
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
   border:1px solid rgba(214,180,124,0.12);
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
   z-index:1001;
 }
 
@@ -452,7 +474,7 @@ section{padding:120px 48px;position:relative}
         <div class="story-ornament">✦</div>
         <div class="story-card-name">Aaliya</div>
         <div class="story-card-detail">The Bride</div>
-        <div style="margin-top:28px;padding-top:28px;border-top:1px solid rgba(214,180,124,0.15)">
+        <div style="margin-top:28px;padding-top:34px;border-top:1px solid rgba(214,180,124,0.15)">
           <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:rgba(248,245,240,0.5);line-height:1.8">"In you, I have found my home,<br>my shelter, my forever."</div>
         </div>
       </div>
