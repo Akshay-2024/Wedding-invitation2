@@ -6,7 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+  html,body{
+  width:100%;
+  overflow-x:hidden;
+}
 *{margin:0;padding:0;box-sizing:border-box}
+
 :root{--gold:#D6B47C;--gold2:#e8c99a;--black:#0A0A0A;--navy:#0D1B2A;--ivory:#F8F5F0;--rose:#B98D8D;}
 html{scroll-behavior:smooth;background:#0A0A0A}
 body{font-family:'Inter',sans-serif;background:#0A0A0A;color:var(--ivory);overflow-x:hidden;cursor:none}
@@ -344,7 +349,55 @@ section{padding:120px 48px;position:relative}
 #details{
   scroll-margin-top:120px;
 }
+@media(max-width:768px){
 
+  #hero{
+    padding-top:120px;
+    padding-bottom:120px;
+  }
+
+  .hero-content{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+  }
+
+  .hero-names{
+    font-size:clamp(3rem,18vw,5rem);
+    line-height:0.95;
+  }
+
+  .details-grid{
+    width:100%;
+    max-width:100%;
+    padding:0 4px;
+  }
+
+  .countdown-wrap{
+    width:100%;
+    padding:0 8px;
+  }
+
+  .countdown-box{
+    flex:1 1 calc(50% - 12px);
+    min-width:unset;
+  }
+
+  .story-card{
+    padding:36px 24px;
+  }
+
+  .section-title{
+    font-size:2.5rem;
+  }
+
+  iframe{
+    max-width:100%;
+  }
+}
+*{
+  max-width:100%;
+}
 </style>
 </head>
 <body>
